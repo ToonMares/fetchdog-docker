@@ -14,8 +14,3 @@ EXPOSE 8080
 
 # Run the script
 CMD ["python", "main.py"]
-
-# How to run it
-
-# docker build -t fetchdog . 
-# docker run -e YOUTUBE_API_KEY='YOUR_API_KEY' -e CHANNEL_ID='YOUR_CHANNEL_ID' -e DOWNLOAD_LATEST_VIDEO='yes' -e CHECK_INTERVAL_MINUTES='5' -e DOWNLOAD_DIR='/downloads' -v  -p 8080:8080 my_fetchdog_container

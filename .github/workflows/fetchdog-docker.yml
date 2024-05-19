@@ -1,0 +1,25 @@
+name: FetchDog Docker
+
+on:
+  push:
+    branches:
+      - Main
+  pull_request:
+    branches:
+      - Main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Log in to Docker Hub
+      run: echo "${{ secrets.DOCKERPW }}" | docker login -u "toonmares" --password-stdin
+      
+    - name: Build and push Docker image
+      run: |
+        docker build -t toonmares/fetchdog-docker:latest .
+        docker push toonmares/fetchdog-docker:latest

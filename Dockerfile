@@ -9,7 +9,7 @@ COPY . /app
 # Install the requirements
 RUN pip install yt-dlp requests
 
-# Deafult port
+# Default port
 EXPOSE 8080
 
 # Run the script
